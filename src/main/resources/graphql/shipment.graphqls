@@ -1,0 +1,34 @@
+type Query {
+    shipments: [Shipment]
+    shipmentsById(shipmentId: String): [Shipment]
+    shipmentsByCustomerId(customerId: Int): [Shipment]
+}
+
+type ShipmentEvent {
+    shipment: Shipment
+    event: ShipmentEventType
+}
+
+enum ShipmentEventType{
+    BKG, BCD, BDE, CRD, LDD, PUC, PUP, REC, REV, CST, CBK, BCF, DOS, ECC, SIR, MBL, DBL, BLR, DOR, ETD, ATD, PRE , FAC, INV, ARP,
+    APP, RTC, BLC, CBS, VGM, SIS, PAC, ANS, ECR
+}
+
+type Shipment{
+    id: ID
+    customerId: ID
+    booking_ref: String
+    bill_of_lading_num: String
+    shipment_mode: String
+    shipment_type: String
+    inland_pickup: String
+    port_of_loading: String
+    port_of_discharge: String
+    inland_delivery: String
+    cargo: String
+    latest_event: String
+    bl_status: String
+    db_created: String
+    db_modified: String
+
+}
